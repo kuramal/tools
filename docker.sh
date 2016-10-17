@@ -3,7 +3,7 @@
 num=1
 
 while true; do
-    echo $num 
+    echo `date`     :$num 
     num=`expr $num + 1`
     sleep 1
 done
