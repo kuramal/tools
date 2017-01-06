@@ -12,7 +12,7 @@ RUN chmod +x /oom-10
 ADD /oom-100 /
 RUN chmod +x /oom-100
 
-ADD /oom-500/
+ADD /oom-500 /
 RUN chmod +x /oom-500
 
 ADD /run/docker.sh /
