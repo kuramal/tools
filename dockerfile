@@ -15,10 +15,13 @@ RUN chmod +x /oom-100
 ADD /oom-500 /
 RUN chmod +x /oom-500
 
-
 ADD /cpu.sh /
 RUN chmod +x /cpu.sh
 
-ADD /run/docker.sh /
-RUN chmod +x /docker.sh
-CMD ["/docker.sh"]
+ADD /net-test.sh /
+RUN chmod +x /net-test.sh
+
+CMD ["/net-test.sh"]
+#ADD /run/docker.sh /
+#RUN chmod +x /docker.sh
+#CMD ["/docker.sh"]
