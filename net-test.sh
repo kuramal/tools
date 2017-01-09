@@ -22,7 +22,7 @@ ok=0
 
 while (($i<$count)); do
     
-    ret=`tracepath $domain`
+    ret=`ping $domain -c 1`
     if [ $? == 0 ];then
         ok=`expr $ok + 1`    
         echo "ok"
