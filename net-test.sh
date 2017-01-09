@@ -22,6 +22,8 @@ ok=0
 
 while (($i<$count)); do
     
+    echo $i
+    date
     arping $domain -I eth0 -c 1
     if [ $? == 0 ];then
         echo "arping ok"
@@ -38,7 +40,7 @@ while (($i<$count)); do
     fi
 
     i=`expr $i + 1`
-    sleep 3
+    sleep 1
 done
 
 if [ $ok -lt $okcount ];then
