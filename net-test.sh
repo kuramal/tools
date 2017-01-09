@@ -22,7 +22,7 @@ ok=0
 
 while (($i<$count)); do
     
-    ret=`ping $domain -c 1`
+    ret=`tracepath $domain`
     if [ $? == 0 ];then
         ok=`expr $ok + 1`    
         echo "ok"
@@ -31,6 +31,7 @@ while (($i<$count)); do
     fi
 
     i=`expr $i + 1`
+    sleep 3
 done
 
 if [ $ok -lt $okcount ];then
