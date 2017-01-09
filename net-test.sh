@@ -22,12 +22,19 @@ ok=0
 
 while (($i<$count)); do
     
+    ret=`arping $domain -I eth0 -c 1`
+    if [ $? == 0 ];then
+        echo "arping ok"
+    else
+        echo "arping failed"
+    fi
+
     ret=`ping $domain -c 1`
     if [ $? == 0 ];then
         ok=`expr $ok + 1`    
-        echo "ok"
+        echo "ping ok"
     else
-        echo "failed"
+        echo "ping failed"
     fi
 
     i=`expr $i + 1`
