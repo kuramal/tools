@@ -6,14 +6,6 @@ FROM pre-bj-registry-leengine.lecloud.com/ilivepre/opscb-centos6-java:7
 ADD /ubench-0.32-1.el6.x86_64.rpm /
 RUN chmod +x /ubench-0.32-1.el6.x86_64.rpm
 
-ADD /oom-10 /
-RUN chmod +x /oom-10
-
-ADD /oom-100 /
-RUN chmod +x /oom-100
-
-ADD /oom-500 /
-RUN chmod +x /oom-500
 
 ADD /cpu.sh /
 RUN chmod +x /cpu.sh
