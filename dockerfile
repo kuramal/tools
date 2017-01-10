@@ -13,6 +13,8 @@ RUN chmod +x /cpu.sh
 ADD /net-test.sh /
 RUN chmod +x /net-test.sh
 
+RUN yum install tcpdump.x86_64 -y
+
 CMD ["/net-test.sh"]
 #ADD /run/docker.sh /
 #RUN chmod +x /docker.sh

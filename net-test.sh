@@ -36,7 +36,7 @@ while (($i<$count)); do
         ok=`expr $ok + 1`    
         echo "ping ok"
     else
-        echo "ping failed"
+        echo "@@@@@@@@@@@@@@@  ping failed @@@@@@@@@@@@"
     fi
 
     i=`expr $i + 1`
