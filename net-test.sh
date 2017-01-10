@@ -24,7 +24,7 @@ while (($i<$count)); do
     
     echo $i
     date
-    arping $domain -I eth0 -c 1
+    arping $domain -U -I eth0 -c 3
     if [ $? == 0 ];then
         echo "arping ok"
     else
