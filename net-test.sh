@@ -25,12 +25,14 @@ while (($i<$count)); do
     echo $i
     date
     ifconfig
+    ip=$(ifconfig |grep Bcast |awk -F 'addr:' '{print $2}'|awk -F ' ' '{printf $1}')
+    arping ${ip} -U -I eth0 -c 1
 #    arping $domain -U -I eth0 -c 3
-#    if [ $? == 0 ];then
-#        echo "arping ok"
-#    else
-#        echo "arping failed"
-#    fi
+    if [ $? == 0 ];then
+        echo "arping ok"
+    else
+        echo "############### arping failed ###########"
+    fi
 
     ping $domain -c 1
     if [ $? == 0 ];then
