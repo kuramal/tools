@@ -24,12 +24,13 @@ while (($i<$count)); do
     
     echo $i
     date
-    arping $domain -U -I eth0 -c 3
-    if [ $? == 0 ];then
-        echo "arping ok"
-    else
-        echo "arping failed"
-    fi
+    ifconfig
+#    arping $domain -U -I eth0 -c 3
+#    if [ $? == 0 ];then
+#        echo "arping ok"
+#    else
+#        echo "arping failed"
+#    fi
 
     ping $domain -c 1
     if [ $? == 0 ];then
