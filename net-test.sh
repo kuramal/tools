@@ -24,10 +24,10 @@ while (($i<$count)); do
     
     echo $i
     date
-    ifconfig
-    ip=$(ifconfig |grep Bcast |awk -F 'addr:' '{print $2}'|awk -F ' ' '{printf $1}')
+#    ifconfig
+#    ip=$(ifconfig |grep Bcast |awk -F 'addr:' '{print $2}'|awk -F ' ' '{printf $1}')
 
-    ping $ip -c 1
+    ping $domain  -c 1
     if [ $? == 0 ];then
         ok=`expr $ok + 1`    
         echo "ping ok"
@@ -36,7 +36,7 @@ while (($i<$count)); do
     fi
 
     i=`expr $i + 1`
-    sleep 1
+    sleep 3
 done
 
 if [ $ok -lt $okcount ];then
