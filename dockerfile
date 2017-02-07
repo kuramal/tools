@@ -13,6 +13,9 @@ RUN chmod +x /cpu.sh
 ADD /net-test.sh /
 RUN chmod +x /net-test.sh
 
+ADD /mem-stress /
+RUN chmod +x /mem-stress
+
 RUN yum install tcpdump.x86_64 -y
 
 CMD ["/net-test.sh"]
